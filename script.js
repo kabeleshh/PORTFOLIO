@@ -36,8 +36,6 @@ function mine(){
         if(len < text.length){
             myself.innerHTML += text[len];
             len++;
-            myself.style.borderRight = '3px solid black';
-            myself.style.animation = 'blink 0.7s step-end infinite';
             setTimeout(mine, 30);
         }
         else{
@@ -63,3 +61,27 @@ window.onscroll = function() {
 scrollUpBtn.onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+
+
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link'); 
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove('active'); 
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active'); 
+    }
+  });
+});

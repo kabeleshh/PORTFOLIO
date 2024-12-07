@@ -5,6 +5,11 @@
     font-family: "Sour Gummy", sans-serif;
 }
 
+body{
+  background-image: linear-gradient(aliceblue,lightblue);
+  z-index: -1;
+}
+
 .wrap{
     background-image: linear-gradient(blueviolet,aquamarine);
     height: 650px;
@@ -41,6 +46,12 @@
     border-radius: 40px;
     font-size: large;
     cursor: pointer;
+}
+
+.wrap .navbar a.active {
+  color: #ff7f50; 
+  font-weight: bold;
+  /*border-bottom: 2px solid #ff7f50;*/
 }
 
 .wrap .navbar .resume{
@@ -262,6 +273,13 @@
   top: 50px;
 }
 
+.wrap #css{
+  position: absolute;
+  top: 450px;
+  left: 1300px;
+  rotate: -35deg;
+}
+
 @keyframes blink {
   50% {
     border-color: transparent;
@@ -307,7 +325,7 @@
 #wrap1 .detail{
   font-size: 1.5em;
   position: absolute;
-  top: 100px;
+  top: 60px;
   left: 250px;
 }
 
